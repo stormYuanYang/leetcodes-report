@@ -12,16 +12,15 @@ struct TreeNode {
 };
 
 // 使用中序遍历即可
+// 或者根据二叉搜索树的特性改进效率
 struct TreeNode* searchBST(struct TreeNode* root, int val) {
     if (root == NULL || root->val == val) {
         return root;
+    } else if (val < root->val) {
+        return searchBST(root->left, val);
+    } else {
+        return searchBST(root->right, val);
     }
-    struct TreeNode* a = searchBST(root->left, val);
-    if (a) {
-        return a;
-    }
-    struct TreeNode* b = searchBST(root->right, val);
-    return b;
 }
 
 int main() {
