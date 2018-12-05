@@ -1,3 +1,5 @@
+//MIT License
+//Copyright (c) 2018 yangyuan
 #include <vector>
 #include <iostream>
 #include <stack>
